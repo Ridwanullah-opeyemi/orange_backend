@@ -1,13 +1,10 @@
 const nodemailer = require("nodemailer")
 
 const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com", 
-    port: 465, 
-    secure: true,
-    // Add timeout options (e.g., 30 seconds)
-    timeout: 30000,
-    // Increase connection timeout
-    logger: true,
+  host: "smtp.gmail.com",
+  port: 587,
+  service: "Gmail",
+  secure: false,
   auth: {
     user: process.env.appEmail,
     pass: process.env.appPassword,
