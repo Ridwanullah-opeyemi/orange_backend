@@ -29,7 +29,7 @@ const forgotPassword = async (req, res) => {
 
     // Save hashed token and expiration
     user.passwordResetToken = passwordResetToken;
-    user.passwordResetExpires = Date.now() + 60 * 60 * 1000; // 1 hour
+    user.passwordResetExpires = Date.now() + 60 * 60 * 1000; 
     await user.save({ validateBeforeSave: false });
 
     // Send email
